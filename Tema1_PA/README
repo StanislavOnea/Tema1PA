@@ -1,0 +1,32 @@
+Problema 1:
+	Pentru problema data am folosit metoda de calculare a sumelor partiale, creez si setez lista de sume
+partiale apoi verific daca cheltuielile nu depasesc bugetul cu formula cheltuiele + partial * (pi - ui) si la
+fel veiric daca cheltuilile nu-s negative. Daca intra in buget actulizez cheltuilile si intru in for din nou,
+daca nu intra setez rezultatul cu formula pi * (buget - cheltuilei) / partial si opresc loop-ul, intorc rezultatul;
+	Cumplexitatea: este determinata de sortarea qsort care are O(nlogn) si restul forul O(n) deci
+complexitatea finala va fi O(nlogn) data te sortare.
+
+Problema 2:
+	Problema este asematoare cu 0/1 Knapsack problem, am implimentat metoda cu tabele dp insa in comparatie cu
+problema clasica mai apare o conditie de max loss. Astfel am construit o table tridimensionala de jos in sus 
+care in fiecare celula va contine rezultatul la subprobleme. Pentru rezultat scad din valoarea maxima valoare curenta 
+a celei mai bune alegeri. 
+	Complexitatea: este table tridimensinala deci cu 3 for-uri de numarul elemente(n), max loss(l) si buget(w)
+deci complexitatea va fi O(n * l * w).
+
+	Problema 3:
+	Problema a fost implimentata cu gasirea de minim linear cat de la inceput atat si de la sfarsit pentru a determina 
+daca sunt mai mult de 1 minim, daca sunt setez elementele dintre aceste minime sa fi egale cu acest minim si adaug in rez-
+ultat cat am scazut. Daca minimul se afla la sfarsit sau la inceputul sirului fac elementul vecin egal cu acest minim.
+Dupa parcurgerea acestor conditii fac ca elemntele pana la primul minim sa fie descrescatoare si dupa ultimul minim
+crescatoare.
+	Complexitatea: nu am for-uri imbricate deci O(n).
+
+Problema 4:
+	Problema e asematoare cu cele care trebuie sa minimizeze cotul pentru a face toate elementele ditincte numai
+ca in acest exemplu elementele vor fi decrementare si nu incrimentate. Problema este rezolvate cu programarea dinamica
+se construieste tebela bidimensionala dp de costuri si apoi se decrementeaza cu 1 si apoi cu 2. Se verifica daca elementul
+curent nu este egala cu elemntul precedent nedecrementat apoi decrementat cu 1 apoi decrementat cu 2 si si alege minmul nou
+daca e mai mic sau cel precedent daca e mai mare si se seteaza in tabel,apoi intorc elementul de pe ultima poz din tabel
+care si e valoare minima.
+	Complexitate: O(n)
